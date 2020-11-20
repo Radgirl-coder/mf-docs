@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: checkout-page
+  repository: docs-page
   tag: latest
   pullPolicy: IfNotPresent
   imagePullSecrets: Always
@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   paths: []
   hosts:
-    - checkout-page.local
+    - docs-page.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

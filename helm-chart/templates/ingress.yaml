@@ -1,14 +1,14 @@
 #Ingress
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "edh-adls-web-ui.fullname" . -}}
+{{- $fullName := include "docs-page.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "edh-adls-web-ui.name" . }}
-    helm.sh/chart: {{ include "edh-adls-web-ui.chart" . }}
+    app.kubernetes.io/name: {{ include "docs-page.name" . }}
+    helm.sh/chart: {{ include "docs-page.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}
